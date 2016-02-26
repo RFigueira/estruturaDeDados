@@ -65,14 +65,13 @@ int main(){
 	}
 	int numeroDeAlocacoes = 0;
 	fscanf(arquivo, "%d", &numeroDeAlocacoes);
+	//chamada da funcao para alocar dinamicamente
 	estrutura = alocacao_dinamica(numeroDeAlocacoes);
-	
-	for (int i = 0; i < numeroDeAlocacoes; ++i){
-      fscanf(arquivo, "%d", &estrutura[i].numero);
-      fscanf(arquivo, "%s", estrutura[i].nome_numero);  
-    }
+	//chamada do procedimento para popular a estrutura
 	popular_estrutura(estrutura, numeroDeAlocacoes, arquivo);
+	//chamada do procedimento para mostrar na tela
 	mostra_na_tela(estrutura, numeroDeAlocacoes);
+	//limpeza de memoria e fechamento do arquivo
 	free(estrutura);
 	fclose(arquivo);
 	return 0;
