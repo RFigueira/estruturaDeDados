@@ -30,9 +30,8 @@ int * buscaBinaria(int* v, int chave, int n) {
 	int fim = n-1;
 	int meio;
 	
-	while (ini <= fim) {
-		
-		meio = (ini + fim) / 2;
+	while (ini <= fim) {		
+		meio = min +(ini - fim) / 2;		
 		if (chave < v[meio]){
 			fim = meio - 1;
 		}	
@@ -56,6 +55,11 @@ int main() {
 	for(int i =0; i<TAM; i++){
 		vetor_rand[i] = rand()%TAM;		
 	}
+	
+	
+	
+	
+	
 	
 	printf("\n\t\t------ BUSCA LINEAR -------");
 	for(int i = 0; i < TAM_VETOR_CHAVES; ++i){
