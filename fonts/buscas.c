@@ -18,11 +18,11 @@ int* buscaLinear(int* v, int chave, int n) {
 	for(int i = 0; i < n; i++) {
 	contador_liniar++;
 		if(chave == v[i]){
-			return printf("\n\n\nValor encontrado na posicao %d, no endereco de memoria %p.", i, &v[i]);
+		return	&v[i];
 		}
 	}
 	
-	 return printf("\n\n\nValor nao encontrado. %d", NULL);
+	 return NULL;
 }
 
 int * buscaBinaria(int* v, int chave, int n) {
@@ -40,12 +40,12 @@ int * buscaBinaria(int* v, int chave, int n) {
 			ini = meio + 1;
 		}
 		else{
-			return printf("\n\n\nValor encontrado na posicao %d, no endereco de memoria %p.", meio, &v[meio]);
+			return &v[meio];
 		}
 			contador_binaria++;
 	}
 	 
-	return printf("\n\n\nValor nao encontrado. %d", NULL);
+	return NULL;
 }
 
 int main() {
@@ -59,17 +59,26 @@ int main() {
 	
 	printf("\n\t\t------ BUSCA LINEAR -------");
 	for(int i = 0; i < TAM_VETOR_CHAVES; ++i){
-		buscaLinear(vetor_rand,vetor_chaves[i],TAM);
-		printf("\nPara encontrar o numero  %d foi necessario %d vezes",vetor_chaves[i] ,contador_liniar);
-		contador_liniar = 0;	
+		if(buscaLinear(vetor_rand,vetor_chaves[i],TAM) != NULL){
+			printf("\n-Para encontrar o numero  %d foi necessario %d vezes",vetor_chaves[i] ,contador_liniar);
+			
+		}
+		else{
+			printf("\n-O numero %d não foi encontrado :.(, foi percorido o total de %d vezes ",vetor_chaves[i] ,contador_liniar);
+		}	
+		contador_liniar = 0;
 	}
 	
 	
 	printf("\n\n\t\t------ BUSCA BINARIA ------");
 	for(int i = 0; i < TAM_VETOR_CHAVES; ++i){	
 		qsort (vetor_rand, TAM, sizeof(int), ordenar);
-		buscaBinaria(vetor_rand,vetor_chaves[i],TAM);
-		printf("\nPara tentar encontrar o numero  %d foi necessario %d vezes",vetor_chaves[i] ,contador_binaria);
+		if(buscaBinaria(vetor_rand,vetor_chaves[i],TAM)!= NULL){
+			printf("\n-Para tentar encontrar o numero  %d foi necessario %d vezes",vetor_chaves[i] ,contador_binaria);
+		}
+		else{
+			printf("\n-O numero %d não foi encontrado :.(, foi percorido o total de %d vezes ",vetor_chaves[i] ,contador_binaria);
+		}
 		contador_binaria = 0;
 		
 	}	
