@@ -18,7 +18,7 @@ int* buscaLinear(int* v, int chave, int n) {
 	for(int i = 0; i < n; i++) {
 	contador_liniar++;
 		if(chave == v[i]){
-			return printf("\n\n\nValor encontrado na posicao %d, no endereco de memoria %d.", i, &v[i]);
+			return printf("\n\n\nValor encontrado na posicao %d, no endereco de memoria %p.", i, &v[i]);
 		}
 	}
 	
@@ -40,7 +40,7 @@ int * buscaBinaria(int* v, int chave, int n) {
 			ini = meio + 1;
 		}
 		else{
-			return printf("\n\n\nValor encontrado na posicao %d, no endereco de memoria %d.", meio, &v[meio]);
+			return printf("\n\n\nValor encontrado na posicao %d, no endereco de memoria %p.", meio, &v[meio]);
 		}
 			contador_binaria++;
 	}
