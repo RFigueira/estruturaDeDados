@@ -32,7 +32,7 @@ int * buscaBinaria(int* v, int chave, int n) {
 	int meio;
 	
 	while (ini <= fim) {		
-		meio = fim +(ini - fim) / 2;		
+		meio = ini +(fim - ini) / 2;		
 		if (chave < v[meio]){
 			fim = meio - 1;
 		}	
