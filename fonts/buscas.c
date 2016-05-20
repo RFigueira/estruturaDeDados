@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #define TAM 31000
 #define TAM_VETOR_CHAVES 10
 
@@ -31,7 +32,7 @@ int * buscaBinaria(int* v, int chave, int n) {
 	int meio;
 	
 	while (ini <= fim) {		
-		meio = min +(ini - fim) / 2;		
+		meio = fim +(ini - fim) / 2;		
 		if (chave < v[meio]){
 			fim = meio - 1;
 		}	
