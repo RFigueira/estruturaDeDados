@@ -61,7 +61,7 @@ void imprime (no *lista) {
 int main(void) {
 	int x = 0;
 	no *lista=(no*) malloc(sizeof(no));
-	int v2[10] = { 2, -3, 1, 89, 99, 88, -3, 19, 35, 11 };
+	int v2[10] = { 2, -3, 1, 89, 99, 88, -3, 19, 35, 11 }; //arbitrário ;)
 	inicio(lista);
 	
 	for ( x = 0; x < 10; x++) {
