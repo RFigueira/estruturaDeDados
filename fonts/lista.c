@@ -76,7 +76,7 @@ int main(void) {
 	for ( x = 0; x<10; x ++) {
 		remover(lista);
 	}
-	imprime(lista);
+	//imprime(lista);
 	
 	return 0;
 }
